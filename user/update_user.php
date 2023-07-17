@@ -14,7 +14,7 @@ $agree = isset($_POST['agree']) ? 1 : 0;
 $db->beginTransaction();
 
 try {
-    $sql = "UPDATE users SET user_name = :name, agrees_to_terms = :agrees WHERE user_id = :userId";
+    $sql = 'UPDATE users SET user_name = :name, agrees_to_terms = :agrees WHERE user_id = :userId';
 
     $stmt = $db->prepare($sql);
 

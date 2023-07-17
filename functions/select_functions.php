@@ -40,4 +40,10 @@ function generateSelectOptions($array, $selectedSectors, $indentation = '')
     return $options;
 }
 
+require_once "db/db_connection.php";
+
+$query = 'SELECT * FROM sectors ORDER BY sector_id';
+$stmt = $db->query($query);
+$sectors = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 ?>

@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
 
 require_once '../db/db_connection.php';
 
-$sql = "INSERT INTO users (user_name, agrees_to_terms) VALUES (:name, :agrees)";
+$sql = 'INSERT INTO users (user_name, agrees_to_terms) VALUES (:name, :agrees)';
 
 $name = $_POST['name'];
 $agrees = isset($_POST['agree']) ? 1 : 0;

@@ -6,18 +6,8 @@ $name = isset($_SESSION['name']) ? $_SESSION['name'] : '';
 $sessionSectors = isset($_SESSION['sectors']) ? $_SESSION['sectors'] : [];
 $agree = isset($_SESSION['agree']) && $_SESSION['agree'] ? 'checked' : '';
 
-if (isset($_POST['submit'])) {
-    $_SESSION['name'] = $_POST['name'];
-    $_SESSION['sectors'] = $_POST['sectors'];
-    $_SESSION['agree'] = isset($_POST['agree']) ? true : false;
-}
 
-require_once 'db/db_connection.php';
 require_once 'functions/select_functions.php';
-
-$query = "SELECT * FROM sectors ORDER BY sector_id";
-$stmt = $db->query($query);
-$sectors = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $selectOptions = generateSelectOptions(buildHierarchy($sectors), $sessionSectors);
 
@@ -42,7 +32,7 @@ $selectHTML .= '</select>';
             </div>
             <div class="form-group sectors">
                 <label for="sectors">Sectors:</label>
-                <?php echo $selectHTML; ?>
+                <?= $selectHTML; ?>
             </div>
             <div class="form-group">
                 <input type="checkbox" id="agree" name="agree" required <?= $agree ?>>
