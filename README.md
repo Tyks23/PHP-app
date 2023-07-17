@@ -9,5 +9,5 @@ Since I didn't find any technology in the current project stack that would benef
 
 To setup databases:
 - Configure server details in **db_connection.php**
-- Generate Database structure with **db.php**
-- Run migration in **db/sectors.php** for sector related data
+- Generate Database structure with **db_create.php**
+- Run migration in **sectors.php** for sector related data
