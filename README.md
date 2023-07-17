@@ -1,5 +1,8 @@
 ## PHP project 
 
+### Database dump
+Location: db/db_dump  
+
 ### Stack
 - PHP  
 
@@ -7,9 +10,7 @@ Since I didn't find any technology in the companies current project stack that w
 
 ### Setup
 
-For XAMPP setup follow steps:  
-
 To setup databases:
 - Configure server details in **db_connection.php**
-- Generate Database structure with **db/db.php** script
-- Run migration in **db/migrations/insert_sectors.php** for sector related data
+- Generate Database structure with **db/db_create.php** script
+- Run migration script in **db/migrations/insert_sectors.php** for sector related data
